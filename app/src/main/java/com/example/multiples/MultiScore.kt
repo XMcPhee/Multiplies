@@ -9,9 +9,12 @@ class MultiScore : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_multi)
 
-        val product = intent.getIntExtra("Sum", -1)
+        val firstNum = intent.getIntExtra("firstNumber", -1)
+        val secondNum = intent.getIntExtra("secondNumber", -1)
+
+        val result = firstNum * secondNum
 
         val text = findViewById<TextView>(R.id.sum)
-        text.text = product.toString()
+        text.text = result.toString()
     }
 }

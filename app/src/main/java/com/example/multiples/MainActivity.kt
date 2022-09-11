@@ -24,8 +24,11 @@ class MainActivity : AppCompatActivity() {
         secondNum.text = secondInt.toString()
 
         button.setOnClickListener{
-            val intent = Intent(this, MultiScore::class.java)
-            intent.putExtra("Sum", firstInt * secondInt)
+            val intent = Intent(this, MultiScore::class.java).apply {
+                putExtra("firstNumber", firstInt)
+                putExtra("secondNumber", secondInt)
+            }
+            //intent.putExtra("Sum", firstInt * secondInt)
             startActivity(intent)
         }
     }
